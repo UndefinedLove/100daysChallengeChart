@@ -38,7 +38,7 @@ document.querySelectorAll('td').forEach((cell, index) => {
 
 
 const addNumbers = () => {
-    for(let i=1; i<=100; i=i+1) {
+    for(let i=1; i<=120; i=i+1) {
         document.getElementById(`day${i}`).innerHTML = i;
     }
 }
