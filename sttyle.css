@@ -59,7 +59,7 @@ td:hover {
 #quotes {
     font-size: 0.8em; 
     text-align: center;
-    color: #fff;
+    color: #000;
     opacity: 1;
     transition: opacity 0.5s ease;
 }
