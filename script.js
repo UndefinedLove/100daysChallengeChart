@@ -50,3 +50,33 @@ document.getElementById("resetButton").addEventListener('click', () => {
     localStorage.clear();
     location.reload();
 });
+
+
+async function getRandomQuote() {
+    try {
+        const response = await fetch('https://api.quotable.io/quotes/random');
+        const data = await response.json();
+        const randomIndex = Math.floor(Math.random() * data.length);
+        return data[randomIndex].content + `<br/> ~ <i style="color:#cecece"> ${data[randomIndex].author}</i>`;
+    } catch (error) {
+        console.error('Error fetching quote:', error);
+        return 'Error fetching quote. Try again later.';
+    }
+}
+
+setInterval(displayRandomQuote, 60000);
+
+
+async function displayRandomQuote() {
+    const quotesElement = document.getElementById('quotes');
+    quotesElement.style.opacity = 0;
+    
+    const randomQuote = await getRandomQuote();
+    quotesElement.innerHTML = `<br/><em>${randomQuote}</em>`;
+    
+    void quotesElement.offsetWidth;
+
+    quotesElement.style.opacity = 1;
+}
+
+displayRandomQuote();

@@ -54,3 +54,12 @@ td:hover {
     box-shadow: none;
     transform: translateY(7px);
 }
+
+
+#quotes {
+    font-size: 0.8em; 
+    text-align: center;
+    color: #fff;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
